@@ -1,5 +1,8 @@
-from render import renderMap
+import os
+
+from board import renderMap
 from utility import readFile, readLevels
+from game import gameInit
 
 levels = readLevels()
 
@@ -13,8 +16,5 @@ userChoose = input("Choose lvl: ")
 data = readFile('./levels/' + userChoose + '.json')
 renderMap(data)
 
-
-
-
-
-
+# Game loop
+gameInit(data)
